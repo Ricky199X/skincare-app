@@ -62,6 +62,8 @@ Validate uniqueness of instruction
 
 User Interface
 - Want to allow user to sign up/login ('/signup', '/login')
+   - By signing up, I'm creating a new user
+   - By logging in, I'm creating a new session
 - Index Page to welcome user
 - Create user in DB and Model
 - Want to allow user to create new routine / persist routine to database
