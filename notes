@@ -1,0 +1,52 @@
+Models:
+User: has_many_routines, has instructions through routines, has product through instructions
+Routine: belongs to user, has many instructions, has many products
+Instruction: (class methods to list steps) - belongs to Routine, has many products
+Product - Belongs to instructions, has many user through routine_instructions
+
+Have a user have a list of products
+
+Tables:
+
+User:
+- username
+- email address
+- password
+
+Routines:
+- name
+
+Instructions:
+- Step
+
+Products:
+- name
+- step in routine 
+
+
+
+
+A routine belongs to a user
+You can't have a product belong to an instruction unless you want a bunch of uplicate products 
+- Make the products resuable 
+Instruction references product id, bunch of different users routines will refer to the id of the product
+
+Routine belongs to user 
+
+
+
+
+Each user has a routine, each routine has instructions 
+
+Could make instruction part of the products Tables:
+Routine id, product id, 
+
+Table InstructionJoin table between Instructions and routines
+
+Join table 
+Routine ID, Instruction ID, Step in Routine 
+Validate uniqueness of instruction
+
+
+
+
