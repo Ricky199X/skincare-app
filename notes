@@ -9,29 +9,40 @@ Have a user have a list of products
 Tables:
 
 User:
-- username
-- email address
-- password
+- t.string :username
+- t.string :email address
+- t.string :password_digest
 
 Routines:
-- name
+- t.string :name
+- t.integer :user_id
 
-Instructions:
-- Step
+Instructions: 
+- t.integer :routine_id
+- t.text :content
+- t.integer :position
 
 Products:
-- name
-- step in routine 
+- t.string :name
 
 
+Views
+- Routines
+   - new.erb
+   - edit.erb
+   - show.erb
+   - routines.erb
+
+- Users
+   - new_user.erb
+   - login.erb
+   - show.erb
 
 
-A routine belongs to a user
-You can't have a product belong to an instruction unless you want a bunch of uplicate products 
+- A routine belongs to a user
+- You can't have a product belong to an instruction unless you want a bunch of duplicate products (this is ok, confirmed with Micah)
 - Make the products resuable 
-Instruction references product id, bunch of different users routines will refer to the id of the product
-
-Routine belongs to user 
+- Routine belongs to user 
 
 
 
@@ -47,6 +58,13 @@ Join table
 Routine ID, Instruction ID, Step in Routine 
 Validate uniqueness of instruction
 
+
+
+User Interface
+- Want to allow user to sign up/login ('/signup', '/login')
+- Create user in DB and Model
+- Want to allow user to create new routine / persist routine to database
+- Set up CSS
 
 
 
