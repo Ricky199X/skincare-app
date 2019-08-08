@@ -62,9 +62,10 @@ Validate uniqueness of instruction
 
 User Interface
 - Want to allow user to sign up/login ('/signup', '/login')
+- Index Page to welcome user
 - Create user in DB and Model
 - Want to allow user to create new routine / persist routine to database
-- Set up CSS
+- Set up CSS - done
 
 
 
