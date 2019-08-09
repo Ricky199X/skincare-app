@@ -20,3 +20,5 @@ gem "bcrypt", "~> 3.1"
 gem "rake", "~> 12.3"
 
 gem "rack", "~> 2.0"
+
+gem "thin", "~> 1.7"

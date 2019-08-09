@@ -1,2 +1,2 @@
-class Routine < ActiveRecord::Base
-end
+# class Routine < ActiveRecord::Base
+# end
