@@ -1,7 +1,7 @@
 Models:
-User: has_many_routines, has instructions through routines, has product through instructions
+User: has_many_routines, has_many products through routines
 Routine: belongs to user, has many instructions, has many products
-Instruction: (class methods to list steps) - belongs to Routine, has many products
+RoutineProduct: 
 Product - Belongs to instructions, has many user through routine_instructions
 
 Have a user have a list of products
@@ -15,15 +15,18 @@ User:
 
 Routines:
 - t.string :name
-- t.integer :user_id
+- t.string :description 
+- t.text :products (a collection of products used in the routine) (will try to use erb tags + OL to list out the products in order)
+- t.integer :user_id -> (foreign key to associate with user)
 
-Instructions: 
+Routine Product:
 - t.integer :routine_id
-- t.text :content
-- t.integer :position
+- t.integer :product_id
 
 Products:
 - t.string :name
+- t.string :category
+- t.integer :routine_id
 
 
 Views
@@ -47,12 +50,11 @@ Views
 
 
 
-Each user has a routine, each routine has instructions 
+- Each user has a routine, each routine has instructions 
+- Could make instruction part of the products Tables:
+- Routine id, product id, 
 
-Could make instruction part of the products Tables:
-Routine id, product id, 
-
-Table InstructionJoin table between Instructions and routines
+- Table InstructionJoin table between Instructions and routines
 
 Join table 
 Routine ID, Instruction ID, Step in Routine 
