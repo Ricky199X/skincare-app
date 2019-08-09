@@ -16,3 +16,7 @@ gem "shotgun", "~> 0.9.2"
 gem "require_all", "~> 2.0"
 
 gem "bcrypt", "~> 3.1"
+
+gem "rake", "~> 12.3"
+
+gem "rack", "~> 2.0"
