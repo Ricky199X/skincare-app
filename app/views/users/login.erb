@@ -5,6 +5,9 @@
 
    <label for="password">Password:</label>
    <input id="password" type="password" name="password"><br>
-
    <input type="submit" value="login">
+   <%# if user does not put in the correct information in either field, need to prompt an error message %>
+   <% if @failed %>
+      <p class="danger">Your input was incorrect, please try again.</p>
+   <% end %>
 </form>
