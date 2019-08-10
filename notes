@@ -1,7 +1,7 @@
 Models:
 User: has_many_routines, has_many products through routines
 Routine: belongs to user, has many instructions, has many products
-RoutineProduct: 
+RoutineProduct: Join table linking a product to a routine 
 Product - Belongs to routine, has many user through routine
 
 Have a user have a list of products
