@@ -15,11 +15,7 @@ ActiveRecord::Schema.define(version: 2019_08_10_020611) do
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.string "category"
-  end
-
-  create_table "routine_products", force: :cascade do |t|
     t.integer "routine_id"
-    t.integer "product_id"
   end
 
   create_table "routines", force: :cascade do |t|

@@ -1,7 +1,6 @@
 Models:
 User: has_many_routines, has_many products through routines
 Routine: belongs to user, has many instructions, has many products
-RoutineProduct: Join table linking a product to a routine 
 Product - Belongs to routine, has many user through routine
 
 Have a user have a list of products
@@ -19,14 +18,10 @@ Routines:
 - t.text :products (a collection of products used in the routine) (will try to use erb tags + OL to list out the products in order)
 - t.integer :user_id -> (foreign key to associate with user)
 
-Routine Product:
-- t.integer :routine_id
-- t.integer :product_id
-
 Products:
 - t.string :name
 - t.string :category
-- t.integer :routine_id (associates a product to a routine )
+- t.integer :routine_id (associates a product to a routine)
 
 
 Views
