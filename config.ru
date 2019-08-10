@@ -1,4 +1,4 @@
-require_relative "./config/env"
+require "./config/env"
 
 
 use Rack::MethodOverride

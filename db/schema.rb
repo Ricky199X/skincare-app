@@ -10,18 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_09_111003) do
-
-  create_table "products", force: :cascade do |t|
-    t.string "name"
-    t.string "category"
-    t.integer "routine_id"
-  end
-
-  create_table "routine_products", force: :cascade do |t|
-    t.integer "routine_id"
-    t.integer "product_id"
-  end
+ActiveRecord::Schema.define(version: 2019_08_10_013243) do
 
   create_table "routines", force: :cascade do |t|
     t.string "name"

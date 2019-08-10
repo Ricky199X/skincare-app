@@ -4,7 +4,6 @@ class CreateRoutines < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :description
       t.text :products
-      t.integer :user_id
     end
   end
 end

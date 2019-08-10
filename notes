@@ -2,7 +2,7 @@ Models:
 User: has_many_routines, has_many products through routines
 Routine: belongs to user, has many instructions, has many products
 RoutineProduct: 
-Product - Belongs to instructions, has many user through routine_instructions
+Product - Belongs to routine, has many user through routine
 
 Have a user have a list of products
 
@@ -17,6 +17,8 @@ Routines:
 - t.string :name
 - t.string :description 
 - t.text :products (a collection of products used in the routine) (will try to use erb tags + OL to list out the products in order)
+
+
 - t.integer :user_id -> (foreign key to associate with user)
 
 Routine Product:
