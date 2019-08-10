@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
    has_many :products, through: :routine_products
 
    #validate user name, password, and email address
-   validates :username, :password, :email_address, presence: true
+   validates :username, :email_address, :password, presence: true
 
    #validate uniqueness of username
    validates :username, :email_address, uniqueness: true

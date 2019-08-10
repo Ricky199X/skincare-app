@@ -10,4 +10,19 @@ class ApplicationController < Sinatra::Base
    get '/' do
       erb :index
    end
+
+
+   helpers do
+      #if user id is nil, I will not be logged in, if not nil I am logged in
+      def logged_in? 
+         !!session[:user_id]
+      end
+
+      def current_user
+         User.find_by(id: session[:user_id])
+      end
+
+   end
+
+
 end
