@@ -2,6 +2,7 @@ class UserController < ApplicationController
    # Controls the sessions
 
    get '/login' do
+      redirect '/home' if logged_in?
       @failed = false
       erb :'users/login' 
    end
@@ -12,7 +13,7 @@ class UserController < ApplicationController
       # wanna set session id
       if !!user && user.authenticate(params[:password])
          session[:user_id] = user.id
-         redirect '/routines'
+         redirect '/home'
       else
          @failed = true
          erb :'users/login'
@@ -21,7 +22,20 @@ class UserController < ApplicationController
    end
 
    get '/signup' do
+      redirect '/home' if logged_in?
       erb :'users/signup'
+   end
+
+   post '/users' do
+      @user = User.create(username: params[:username], email_address: params[:email_address], password: params[:password])
+      # check if there are any errors
+      if @user.errors.any?
+         erb :'users/signup'
+      else
+         # redirect user to user homepage
+         session[:user_id] = @user.id 
+         redirect '/home'
+      end
    end
    
 end
