@@ -17,8 +17,6 @@ Routines:
 - t.string :name
 - t.string :description 
 - t.text :products (a collection of products used in the routine) (will try to use erb tags + OL to list out the products in order)
-
-
 - t.integer :user_id -> (foreign key to associate with user)
 
 Routine Product:
