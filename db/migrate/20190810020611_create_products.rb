@@ -3,7 +3,6 @@ class CreateProducts < ActiveRecord::Migration[5.2]
     create_table :products do |t|
       t.string :name
       t.string :category
-      t.integer :routine_id
     end
   end
 end
