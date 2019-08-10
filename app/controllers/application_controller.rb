@@ -11,6 +11,11 @@ class ApplicationController < Sinatra::Base
       erb :index
    end
 
+   get '/home' do
+      authenticate
+      erb :home
+   end
+
 
    helpers do
       #if user id is nil, I will not be logged in, if not nil I am logged in
