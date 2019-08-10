@@ -61,10 +61,14 @@ User Interface
 - Want to allow user to sign up/login ('/signup', '/login')
    - By signing up, I'm creating a new user
    - By logging in, I'm creating a new session
-- Index Page to welcome user
-- Create user in DB and Model
+- Index Page to welcome user - DONE
+- Create user in DB and Model - DONE
 - Want to allow user to create new routine / persist routine to database
 - Set up CSS - done
 
+Sessions: What allow us to handle user authentication and authorization 
+   - When we enable session + set an appropriate key, we get a hash
+   - We can write info into that hash, hash will be persisted via sending cookies to user to live in web browser
+   - cookies are secured + encrypted, signed with session secret key -> any info sent to browser is unreadable and unable to be changed
 
 
