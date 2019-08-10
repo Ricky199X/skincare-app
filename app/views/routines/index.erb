@@ -1,1 +1,4 @@
-YOOOOOOOOOOOOOOO!
+<% @routines.each do |routine| %>
+   <%= erb :'routines/_routine', locals: {routine: routine} %>
+<% end %>
+
