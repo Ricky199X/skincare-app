@@ -5,8 +5,7 @@ class User < ActiveRecord::Base
 
    #validate user name, password, and email address
    validates :username, :email_address, :password, presence: true
-
-   #validate uniqueness of username
+   #validate uniqueness of username and email address
    validates :username, :email_address, uniqueness: true
 
    def slug
