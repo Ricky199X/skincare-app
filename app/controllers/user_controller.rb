@@ -12,7 +12,7 @@ class UserController < ApplicationController
       # wanna set session id
       if !!user && user.authenticate(params[:password])
          session[:user_id] = user.id
-         erb :'routines/index'
+         redirect '/routines'
       else
          @failed = true
          erb :'users/login'
