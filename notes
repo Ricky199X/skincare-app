@@ -66,7 +66,7 @@ User Interface
 - Want to allow user to create new routine / persist routine to database
 - Set up CSS - done
 
-Sessions: What allow us to handle user authentication and authorization 
+Sessions: What allow us to handle user authentication and authorization - DONE
    - When we enable session + set an appropriate key, we get a hash
    - We can write info into that hash, hash will be persisted via sending cookies to user to live in web browser
    - cookies are secured + encrypted, signed with session secret key -> any info sent to browser is unreadable and unable to be changed
