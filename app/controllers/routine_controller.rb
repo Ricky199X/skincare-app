@@ -1,11 +1,8 @@
 class RoutineController < ApplicationController
 
    get '/routines' do
-      if logged_in?
-         erb :'routines/index'
-      else
-         "Go away"
-      end
+      authenticate
+      erb :'routines/index'
    end
 
 end
