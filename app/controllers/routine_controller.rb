@@ -36,4 +36,15 @@ class RoutineController < ApplicationController
       end
    end
 
+   # take user to the edit routine form
+
+   # delete action
+   delete '/routines/:id' do
+      post = Routine.find_by(id: params[:id])
+      if routine
+         routine.destroy
+         redirect '/routines'
+      end
+   end
+
 end
