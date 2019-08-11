@@ -6,4 +6,9 @@ class RoutineController < ApplicationController
       erb :'routines/index'
    end
 
+   get '/routines/new' do
+      authenticate
+      erb :'routines/new'
+   end
+
 end
