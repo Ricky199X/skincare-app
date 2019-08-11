@@ -40,7 +40,7 @@ class RoutineController < ApplicationController
 
    # delete action
    delete '/routines/:id' do
-      post = Routine.find_by(id: params[:id])
+      routine = Routine.find_by(id: params[:id])
       if routine
          routine.destroy
          redirect '/routines'
