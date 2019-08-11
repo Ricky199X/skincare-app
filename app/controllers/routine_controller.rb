@@ -11,6 +11,7 @@ class RoutineController < ApplicationController
       erb :'routines/new'
    end
 
+   # allows user to create a new routine via the UI, persists it to the database + adds to the user's routine index
    post '/routines' do
       u = current_user
       u.routines.create(name: params[:name], description: params[:description])
@@ -21,6 +22,17 @@ class RoutineController < ApplicationController
       else
          @message = "You made an oops! Add a new routine!"
          erb :'routines/new'
+      end
+   end
+
+   # show the routine the user clicks on in their index 
+   get '/routines/:id' do
+      authenticate
+      if current_user
+         @routine = Routine.find(params[:id])
+         erb :'/routines/show'
+      else
+         redirect to '/login'
       end
    end
 
