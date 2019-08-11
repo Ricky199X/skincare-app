@@ -1,3 +1,5 @@
 <div>
-   <p><%= routine.name %></p>
+   <% @user.routines.each do |routine| %>
+   <ul><%=routine.name%></ul>
+<% end %>
 </div>

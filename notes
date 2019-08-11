@@ -72,3 +72,5 @@ Sessions: What allow us to handle user authentication and authorization - DONE
    - cookies are secured + encrypted, signed with session secret key -> any info sent to browser is unreadable and unable to be changed
 
 
+To-do's:
+Having trouble displaying a user's routines on their homepage

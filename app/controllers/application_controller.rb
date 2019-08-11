@@ -30,6 +30,9 @@ class ApplicationController < Sinatra::Base
       def authenticate
          if !logged_in?
             redirect '/login'
+         else
+            @user = current_user
+            @user_routines = current_user.routines
          end
       end
 
