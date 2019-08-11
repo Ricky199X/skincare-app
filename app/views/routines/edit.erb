@@ -1,15 +1,13 @@
 <h1>Update Routine</h1>
 
-<%= if routine.user == current_user %>
-   <a href="/routines/<% routine.id %>/edit">Edit</a>
-<% end %>
-
-<form method ="post" action="/routines/<%@routine.id%>">
-   <input id = "hidden" type="hidden" name="_method" value="patch">
+<form method="post" action="/routines/<%= @routine.id %>">
+  <input id="hidden" type="hidden" name="_method" value="patch">
 
    <label for="name">Enter name here:</label>
    <input type="text" name="name" id="name">
 
    <label for="routine">Enter description here:</label>
    <input type="text" name="description" id="description">
+
+   <input type = "submit" value = "Submit Changes!">
 </form>

@@ -38,6 +38,11 @@ class RoutineController < ApplicationController
 
    # take user to the edit routine form
 
+   get '/routines/:id/edit' do
+      @routine = Routine.find_by(id: params[:id])
+      erb :'/routines/edit'
+   end
+
    # delete action
    delete '/routines/:id' do
       routine = Routine.find_by(id: params[:id])
