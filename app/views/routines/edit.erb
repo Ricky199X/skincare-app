@@ -1,0 +1,10 @@
+<h1>Update Routine</h1>
+<form method ="post" action="/routines/<%@routine.id%>">
+   <input id = "hidden" type="hidden" namre="_method" value="patch">
+
+   <label for="name">Enter name here:</label>
+   <input type="text" name="name" id="name">
+
+   <label for="routine">Enter description her:</label>
+   <input type="text" name="description" id="description">
+</form>

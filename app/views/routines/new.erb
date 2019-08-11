@@ -1,0 +1,14 @@
+<% if !!@message %>
+   <p class="danger"><%= @message %></p>
+<% end %>
+
+<form action="/routines" method="post">
+   <label for="name">Enter name here:</label>
+   <input type="text" name="name" id="name"><br>
+
+   <label for="routine">Enter description here:</label>
+   <input type="text" name="description" id="description"><br>
+
+   <input type = "submit" value = "Add Routine">
+
+</form>

@@ -43,8 +43,6 @@ Views
 - Routine belongs to user 
 
 
-
-
 - Each user has a routine, each routine has instructions 
 - Could make instruction part of the products Tables:
 - Routine id, product id, 
@@ -63,7 +61,7 @@ User Interface
    - By logging in, I'm creating a new session
 - Index Page to welcome user - DONE
 - Create user in DB and Model - DONE
-- Want to allow user to create new routine / persist routine to database
+- Want to allow user to create new routine / persist routine to database - DONE
 - Set up CSS - done
 
 Sessions: What allow us to handle user authentication and authorization - DONE
@@ -74,3 +72,18 @@ Sessions: What allow us to handle user authentication and authorization - DONE
 
 To-do's:
 Having trouble displaying a user's routines on their homepage
+
+Priorities
+1. Post users routines on index page (may not be able to do this w partial - needs to show routine.name of each routine) - DONE
+2. Routine show View (needs to be an ordered list with clickable link to each product)
+3. User needs to be able to create routine, then be redirect to their index of routines
+4. Product Views (show, new, index, edit)
+
+User flow
+1. Sign up/login - done
+2. User homepage: "Hey user, here are a list of your most recent routines (each routine is clickable)
+3. There's a menu up top with "home", "routines", "products"
+   - Home is just homepage 
+   - Routines is an index of all their routines
+   - Products is a repo of products in the database + their descriptions (links are clickable, products can be individually added to a routine)
+4. 

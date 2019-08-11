@@ -1,4 +1,15 @@
-<% @routines.each do |routine| %>
-   <%= erb :'routines/_routine', locals: {routine: routine} %>
-<% end %>
 
+
+<%# test this out once wifi is back up %>
+<% if !@user_routines.empty? %>
+  <ul>
+    <% @user_routines.each do |routine| %>
+      <li><a href= "/routines/<%= routine.id %>"><%= routine.name %></a></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>You don't currently have any routines! Would you like to <a href="/routines/new">add one</a>?</p>
+<% end %>
+<br>
+
+<a href="/routines/new">New Routine</a>
