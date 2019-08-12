@@ -40,13 +40,26 @@ class RoutineController < ApplicationController
 
    get '/routines/:id/edit' do
       @routine = Routine.find_by(id: params[:id])
-      erb :'/routines/edit'
+      authenticate_user(@routine)
+      if @routine
+         erb :'/routines/edit'
+      else
+         erb :error, layout: false
+      end
+   end
+
+   patch '/routines/:id' do
+      @routine = Routine.find_by(id: params[:id])
+      authenticate_user(@routine)
+      @routine.update(name: params[:name], description: params[:description])
+      redirect '/routines'
    end
 
    # delete action
    delete '/routines/:id' do
+      authenticate
       @routine = Routine.find_by(id: params[:id])
-      if routine
+      if @routine
          @routine.destroy
          redirect '/routines'
       end

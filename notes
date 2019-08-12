@@ -75,10 +75,10 @@ Having trouble displaying a user's routines on their homepage
 
 Priorities 
 1. Routine show View (needs to be an ordered list with clickable link to each product) 
-2. Products view
+2. Product Views (show, new, index, edit)
+3. 
 4. 
 5. 
-6. Product Views (show, new, index, edit)
 
 FINISHED TASKS
 - Post users routines on index page (may not be able to do this w partial - needs to show routine.name of each routine) - DONE
