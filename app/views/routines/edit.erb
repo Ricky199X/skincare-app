@@ -10,4 +10,10 @@
    <input type="text" name="description" id="description">
 
    <input type = "submit" value = "Submit Changes!">
+
+</form>
+
+<form method ="post" action="/routines/<%= @routine.id %>">
+   <input id="hidden" type="hidden" name="_method" value="delete">
+   <input type="submit" value="delete">
 </form>
