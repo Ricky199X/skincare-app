@@ -33,6 +33,7 @@ class ApplicationController < Sinatra::Base
          else
             @user = current_user
             @user_routines = current_user.routines
+            @user_products = current_user.routines
          end
       end
 

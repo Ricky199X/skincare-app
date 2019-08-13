@@ -1,4 +1,4 @@
 class RoutineProduct < ActiveRecord::Base
-  has_many :routines
-  has_many :products
+  belongs_to :routines
+  belongs_to :products
 end

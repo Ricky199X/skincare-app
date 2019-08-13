@@ -1,0 +1,14 @@
+<h1>testing products index</h1>
+
+<% if !@user_products.empty? %>
+  <ul>
+    <% @user_products.each do |product| %>
+      <li><a href= "/products/<%= product.id %>"><%= product.name %></a></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>You don't currently have any products! Would you like to <a href="/routines/new">add one</a>?</p>
+<% end %>
+<br>
+
+<a href="/products/new">New Product</a>
