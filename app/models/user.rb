@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
    has_secure_password
    has_many :routines
+   has_many :products, through: :routines
 
    #validate user name, password, and email address
    validates :username, :email_address, :password, presence: true
