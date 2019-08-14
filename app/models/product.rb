@@ -1,5 +1,6 @@
 class Product < ActiveRecord::Base
-   belongs_to :routine
-   has_many :users, through: :routine
+   has_many :routine_products
+   has_many :routines, through: :routine_products
+   has_many :users, through: :routines
 
 end

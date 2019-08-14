@@ -11,6 +11,8 @@ class ProductController < ApplicationController
       erb :'products/new'
    end
 
+   
+
 
 
 end

@@ -72,13 +72,17 @@ Sessions: What allow us to handle user authentication and authorization - DONE
 
 To-do's:
 
+--- do products.all helper method ---
+
+def all_products
+   return self.products.all 
+end
+
 
 Priorities 
-1. Routine show View (needs to be an ordered list with clickable link to each product) 
-2. Product view index - want user to be able to see the products associated with routines THEY'VE made
-3. Want user to be able to click on a product in that index and open its description (show)
-4. Want user to be able to create new product
-5. Want user to be able to add product to existing routine
+1. Want user to be able to create new product thru the UI
+2. Want user to be able to click on a product in that index and open its description (show)
+3. Want user to be able to add product to existing routine
 
 FINISHED TASKS
 - Post users routines on index page (may not be able to do this w partial - needs to show routine.name of each routine) - DONE
@@ -87,6 +91,9 @@ FINISHED TASKS
 - Routine Delete Action - DONE
 - products associating with routines - DONE
 - ....need to get routine_products to associate with user - DONE
+- Routine show View (needs to be an ordered list with clickable link to each product) - DONE
+- . Product view index - want user to be able to see the products associated with routines THEY'VE made - DONE
+
 
 User flow
 1. Sign up/login - done

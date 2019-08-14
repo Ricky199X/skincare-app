@@ -10,12 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_13_102709) do
+ActiveRecord::Schema.define(version: 2019_08_10_132025) do
 
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.string "category"
-    t.integer "routine_id"
   end
 
   create_table "routine_products", force: :cascade do |t|
