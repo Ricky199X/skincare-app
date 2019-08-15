@@ -44,10 +44,12 @@ class ApplicationController < Sinatra::Base
       def authenticate_user(routine)
          redirect '/home' if !routine
          redirect '/home' if current_user != routine.user
-         # redirect '/home' if current_user != product.users
+         redirect '/home' if current_user != product.users
       end
 
-      # def 
+      def all_products
+         return self.products.all
+      end
 
    end
 
