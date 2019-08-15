@@ -27,6 +27,10 @@ class ApplicationController < Sinatra::Base
          User.find_by(id: session[:user_id])
       end
 
+      def current_routine
+         Routine.find_by(id: session[:routine_id])
+      end
+
       def authenticate
          if !logged_in?
             redirect '/login'
@@ -43,7 +47,7 @@ class ApplicationController < Sinatra::Base
          # redirect '/home' if current_user != product.users
       end
 
-      def 
+      # def 
 
    end
 
