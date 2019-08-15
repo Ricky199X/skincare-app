@@ -17,10 +17,13 @@ class ProductController < ApplicationController
          @message = "This product already exists. Please add a new product or choose from the products below."
          redirect to '/products/new'
       else
+         # assign local variable for current user
+         u = current_user
          # creates the product
-      @product = Product.create(name: params[:name], category: params[:category])
+         @product = Product.create(name: params[:name], category: params[:category])
          #now need to associate it to routine_products 
-      @
+         
+      # @
       # binding.pry
       redirect to "/products/#{@product.id}"
       end
