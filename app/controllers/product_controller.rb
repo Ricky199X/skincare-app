@@ -11,28 +11,28 @@ class ProductController < ApplicationController
       erb :'products/new'
    end
 
-   # get '/products/new' do
-   #    authenticate
+      post '/products' do
+         u = current_user
+         @product = Product.create(name: params[:name], category: params[:category])
+            # binding.pry   
+         # if routine is saved properly, go to the user's routines page
+         if !!u 
+            redirect '/products' 
+         else
+            @message = "You made an oops! Add a new product!"
+            erb :'products/new'
+         end
+      end
 
-   # end
-
-   #allows user to add a new product
-   # post '/products' do 
-   #    if Product.find_by(name: params[:name])
-   #       @message = "This product already exists. Please add a new product or choose from the products below."
-   #       redirect to '/products/new'
-   #    else
-   #       # assign local variable for current user
-   #       u = current_user
-   #       # creates the product
-   #       @product = Product.create(name: params[:name], category: params[:category])
-   #       #now need to associate it to routine_products 
-         
-   #    # @
-   #    # binding.pry
-   #    redirect to "/products/#{@product.id}"
-   #    end
-   # end
+      get '/products/:id' do
+         authenticate
+         if current_user
+            @product = Product.find(params[:id])
+            erb :'/products/show'
+         else
+            redirect to '/login'
+         end
+      end
 
    
 
