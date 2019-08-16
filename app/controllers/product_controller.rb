@@ -14,7 +14,7 @@ class ProductController < ApplicationController
       post '/products' do
          u = current_user
          @product = Product.create(name: params[:name], category: params[:category])
-            # binding.pry   
+            binding.pry   
          # if routine is saved properly, go to the user's routines page
          if !!u 
             redirect '/products' 
