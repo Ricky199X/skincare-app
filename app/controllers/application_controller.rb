@@ -38,7 +38,7 @@ class ApplicationController < Sinatra::Base
             @user = current_user
             @user_routines = current_user.routines
             @user_products = current_user.products.all
-            binding.pry
+            # binding.pry
          end
       end
 

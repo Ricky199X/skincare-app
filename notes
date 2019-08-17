@@ -79,13 +79,14 @@ def all_products
 end
 
 def current_routine 
-   
+
 end
 
 
 Priorities 
-1. Want user to be able to create new product thru the UI
-2. Want user to be able to add product to existing routine
+1. Want user to be able to create new product thru the UI - done, but need to finish #2 as well
+2. Want user to be able to add product to existing routine (can do on backend, need to do in PC)
+3. 
 3. Select product(s) and add to routine
 
 FINISHED TASKS
