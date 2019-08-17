@@ -12,9 +12,11 @@ class ProductController < ApplicationController
    end
 
       post '/products' do
-         if logged_in? && current_routine?
+         if logged_in?
+         # @routine = current_routine
          @product = Product.create(name: params[:name], category: params[:category])
-         @routine = current_routine?
+
+         # binding.pry
 
          # 1. create a product 
          # 2. find a way to state what the current routine is 
@@ -44,8 +46,15 @@ class ProductController < ApplicationController
          end
       end
 
+      # delete product action
+      delete '/products/:id' do
+         authenticate
+         @product = Product.find_by(id: params[:id])
+         if @product
+            @product.destroy
+            redirect '/products'
+         end
+      end
    
-
-
 
 end

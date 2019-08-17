@@ -36,6 +36,7 @@ class ApplicationController < Sinatra::Base
             redirect '/login'
          else
             @user = current_user
+            @routine = current_routine
             @user_routines = current_user.routines
             @user_products = current_user.products.all
             # binding.pry
@@ -45,7 +46,7 @@ class ApplicationController < Sinatra::Base
       def authenticate_user(routine)
          redirect '/home' if !routine
          redirect '/home' if current_user != routine.user
-         # redirect '/home' if current_user != product.users
+         # redirect '/home' if current_user != product.user
       end
 
       def all_products
