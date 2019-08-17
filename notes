@@ -78,10 +78,15 @@ def all_products
    return self.products.all 
 end
 
+def current_routine 
+   
+end
+
 
 Priorities 
 1. Want user to be able to create new product thru the UI
 2. Want user to be able to add product to existing routine
+3. Select product(s) and add to routine
 
 FINISHED TASKS
 - Post users routines on index page (may not be able to do this w partial - needs to show routine.name of each routine) - DONE
@@ -93,6 +98,7 @@ FINISHED TASKS
 - Routine show View (needs to be an ordered list with clickable link to each product) - DONE
 - . Product view index - want user to be able to see the products associated with routines THEY'VE made - DONE
 - Want user to be able to click on a product in that index and open its description (show) - DONE
+- User routine displays products acssociated with it 
 
 
 User flow

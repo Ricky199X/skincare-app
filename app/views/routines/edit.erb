@@ -1,4 +1,4 @@
-<h1>Update Routine</h1>
+<h1>Update Routine: <%=@routine.name%></h1>
 
 <form method="post" action="/routines/<%= @routine.id %>">
   <input id="hidden" type="hidden" name="_method" value="patch">
