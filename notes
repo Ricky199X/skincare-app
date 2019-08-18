@@ -84,11 +84,8 @@ end
 
 
 Priorities 
-1. Want user to be able to create new product thru the UI - done, but need to finish #2 as well
-2. Want user to be able to add product to existing routine (can do on backend, need to do in PC)
-3. 
-3. Select product(s) and add to routine
-4. Finish blog post
+1. Error page for bad url's 
+2. Finish blog post
 
 FINISHED TASKS
 - Post users routines on index page (may not be able to do this w partial - needs to show routine.name of each routine) - DONE
@@ -101,6 +98,8 @@ FINISHED TASKS
 - . Product view index - want user to be able to see the products associated with routines THEY'VE made - DONE
 - Want user to be able to click on a product in that index and open its description (show) - DONE
 - User routine displays products acssociated with it 
+- Want user to be able to create new product thru the UI - done, but need to finish #2 as well - DONE
+- Want user to be able to add product to existing routine (can do on backend, need to do in PC) - DONE
 
 
 User flow
@@ -110,4 +109,3 @@ User flow
    - Home is just homepage 
    - Routines is an index of all their routines
    - Products is a repo of products in the database + their descriptions (links are clickable, products can be individually added to a routine)
-4. 
