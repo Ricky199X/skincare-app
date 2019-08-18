@@ -6,3 +6,26 @@ html {
    color: red;
 }
 
+h1 {
+   font-family: Helvetica;
+}
+
+h2 {
+   font-family: Helvetica;
+}
+
+h3 {
+   font-family: Helvetica;
+}
+
+a {
+   font-family: Helvetica;
+   font-style: normal;
+
+}
+
+label {
+   font-family: Helvetica;
+}
+
+
