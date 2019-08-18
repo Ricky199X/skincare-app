@@ -54,6 +54,11 @@ class ApplicationController < Sinatra::Base
          return self.products.all
       end
 
+      not_found do
+         status 404
+         erb :'errors/error404'
+      end
+
    end
 
 
