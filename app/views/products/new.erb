@@ -2,7 +2,7 @@
    <p class="danger"><%= @message %></p>
 <% end %>
 
-<form action="/routines/<%@routine.id%>/products" method="post">
+<form action="/routines/<%=@routine.id%>/products" method="post">
    <label for="name">Enter product here:</label>
    <input type="text" name="name" id="name"><br>
 
