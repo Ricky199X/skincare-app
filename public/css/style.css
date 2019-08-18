@@ -4,6 +4,7 @@ html {
 
 .danger {
    color: red;
+   font-family: 'Franklin Gothic Medium';
 }
 
 h1 {
@@ -22,6 +23,10 @@ a {
    font-family: Helvetica;
    font-style: normal;
 
+}
+
+p {
+   font-family: Helvetica;
 }
 
 label {
