@@ -5,14 +5,16 @@
 <form action="/routines/<%=@routine.id%>/products" method="post">
    <label for="name">Enter product here:</label>
    <input type="text" name="name" id="name"><br>
-
+   <p>
    <label for="category">Enter category here:</label>
    <input type="text" name="category" id="category"><br>
-
+   <p>
    <input type = "submit" value = "Add Product">
 </form>
 
 <p>
+<%# ---- Ancillary Buttons ---- %>
+
  <form action="/logout" method="post">
       <input type="hidden" name="_method" value="delete">
       <input type="submit" value="Log Out">
