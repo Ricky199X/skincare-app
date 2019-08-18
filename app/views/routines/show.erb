@@ -5,7 +5,7 @@
     <% end %>
     <br>
 <a href = "/routines/<%= @routine.id %>/edit">Edit</a>
-<a href = "/products/new">Add Product</a>
+<a href = "/routines/<%= @routine.id %>/products/new">Add Product</a>
 <%# will need to create products, build out association between product <-> routine %>
 
 <form method ="post" action="/routines/<%= @routine.id %>">

@@ -28,7 +28,8 @@ class ApplicationController < Sinatra::Base
       end
 
       def current_routine
-         Routine.find_by(id: session[:routine_id])
+         #should this be finding by an id, or finding by the routines name?
+         Routine.find_by(id: params[:id])
       end
 
       def authenticate
