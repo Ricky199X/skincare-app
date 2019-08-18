@@ -40,7 +40,7 @@ class UserController < ApplicationController
 
    delete '/logout' do
       session.clear
-      redirect '/login'
+      erb :'/index'
    end
    
 end
