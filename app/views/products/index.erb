@@ -1,5 +1,4 @@
-<h1>testing products index</h1>
-</h2>here are all your products!</h2>
+<h2>Here are all your favorite products, <%= @user.username %>!</h2>
 
 <% if !@user_products.empty? %>
   <ul>
@@ -12,4 +11,6 @@
 <% end %>
 <br>
 
-<a href="/products/new">New Product</a>
+ <form method ="get" action="/routines">
+   <input type="submit" value="Go to Routines">
+</form>

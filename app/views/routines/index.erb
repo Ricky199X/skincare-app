@@ -1,5 +1,4 @@
-
-
+<h2><%= @user.username %>'s Routines</h2>
 <%# test this out once wifi is back up %>
 <% if !@user_routines.empty? %>
   <ul>
@@ -12,4 +11,6 @@
 <% end %>
 <br>
 
-<a href="/routines/new">New Routine</a>
+ <form method ="get" action="/routines/new">
+   <input type="submit" value="Add New Routine">
+</form>
