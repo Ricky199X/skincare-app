@@ -21,6 +21,7 @@ class ProductController < ApplicationController
 
 
    post '/routines/:id/products' do
+      authenticate
       if current_user #-> this is pointing to Micah
          # @routine = Routine.find_by(id: params[:id])
          @product = Product.create(name: params[:name], category: params[:category]) #-> this is pointing to the product i just input thru the browser
