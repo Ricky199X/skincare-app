@@ -31,8 +31,6 @@ class RoutineController < ApplicationController
       end
     end
 
-   
-
    # show the routine the user clicks on in their index 
    get '/routines/:id' do
       authenticate
