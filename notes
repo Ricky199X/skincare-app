@@ -109,3 +109,84 @@ User flow
    - Home is just homepage 
    - Routines is an index of all their routines
    - Products is a repo of products in the database + their descriptions (links are clickable, products can be individually added to a routine)
+
+
+   Knowledge Requirements:
+
+   1. How do you enable sessions? 
+      ApplicationController -> enable :sessions, set :session_secret
+   - A session is a way for a web app to set a cookie that persists accross multiple HTTP requests + relate these requests to eachother
+   - If you do something in an app and that something is stored to your session, the web app can use it later
+   - Session secret is a secret key for encrypting these cookies, proctecting the server from being accessed
+
+   2. How do you set up a database? 
+   - Install sqlite3
+  
+   
+   3. How do you ensure all your gems are being used? 
+   - Check the gemfile, then check the gemfile lock. If not in the gefile lock, run bundle install to get up to date.
+
+   4. What gem enables password encryption?
+   - bcrypt 
+
+   5. How do we encrypt our passwords in the database?
+   - with bcrypt, which a password hashing function
+   - If using bcrypt, when creating your migration, set the password attribute as :password_digest. 
+   - bcrypt will automatically encypt what's passed thru as the password
+   - To authenticate a user, the password presented by the user is hashed and compared with the stored hash
+   - A password hash requires the use of a large random, non-secret salt value which can be stored with the password hash. 
+   - The salt randomizes the output of the password hash, making it impossible to guess.
+  
+
+   6. What are helpers and why do we use them?
+   - A helper is a method that is used to perform a repetitive task common across multiple classes. 
+   - It keeps us from repeating the same code in different classes, making our application more dry.
+
+   7. How do you make helpers?
+   - in the ApplicationController file, open up a block and place the methods inside. 
+
+      helpers do 
+
+         def helper_method do
+            ...
+         end
+
+      end
+
+   8. How do you create a migration?
+    - With ActiveRecord
+      1. rake db:create_migration NAME = create_table
+      2. in the migration file, create the table, add its data type and attribute names
+      3. run rake db:migrate
+
+   9. How you you set up a has_many and belongs_to relationship vs a has_many to has_many in SQL/ActiveRecord?
+   - You set them up in your models. The "parent" model has_many of whatever you're trying to create a relationship with. 
+   - The "child Model" belongs to the parent :
+   ex. A User has_many Routines, a Routine belongs to a User
+
+   10. How do you rescue an error in ruby?
+   - by raising an exception error to prevent the app from crashing.
+
+   11. What is the difference between authentication and authorization?
+   - Authentication: verifies the identity of the user and grants them access to the resource. (a log in page)
+   - Authorization: Makes sure that the user has the needed level of clearance to get a specific resource (validating credentials via passwords etc.).
+
+   12.
+   
+   13. What is rack?
+   -  Rack is a ruby gem that allows us to create a simple web server. Rails is built on top of rack.
+
+   14. What is Rake used for? How do you make a Rake task?
+
+   15. How do you use a .gitignore file correctly?
+
+   16. What methods does ActiveRecord give you? How do you access associations?
+   - Be able to show Micah in Rake Console
+
+
+
+
+
+
+
+   

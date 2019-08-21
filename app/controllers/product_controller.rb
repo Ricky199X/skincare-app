@@ -10,7 +10,6 @@ class ProductController < ApplicationController
       authenticate
       @routine = Routine.find_by(id: params[:id])
       redirect to '/routines/:id/products'
-      # redirect to '/routines/:id/products'
    end
    
    get '/routines/:id/products/new' do

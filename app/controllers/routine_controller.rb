@@ -56,8 +56,8 @@ class RoutineController < ApplicationController
 
    patch '/routines/:id' do
       @routine = Routine.find_by(id: params[:id])
-      authenticate_user(@routine)
-      @routine.update(name: params[:name], description: params[:description])
+         authenticate_user(@routine)
+         @routine.update(name: params[:name], description: params[:description])
       redirect '/routines'
    end
 
