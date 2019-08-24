@@ -3,15 +3,20 @@
 <form method="post" action="/routines/<%= @routine.id %>">
   <input id="hidden" type="hidden" name="_method" value="patch">
 
-   <label for="name">Enter name here:</label>
+   <label for="name">Enter new name here:</label>
    <input type="text" name="name" id="name">
 
-   <label for="routine">Enter description here:</label>
+   <label for="routine">Enter new description here:</label>
    <input type="text" name="description" id="description">
 
    <input type = "submit" onclick="return confirm('Please confirm to submit your changes!');" value = "Submit Changes!">
 </form>
 
+<h3>Products in this Routine</h3>
+  <%@routine.products.each do |product| %>
+      <li><%=product.name%></li>
+   <% end %>
+<p>
 
 <%# ---- Ancillary Buttons ---- %>
 

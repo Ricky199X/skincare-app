@@ -84,8 +84,8 @@ end
 
 
 Priorities 
-1. Error page for bad url's 
-2. Finish blog post
+- Have a user be able to delete a product from a routine, but keep the product in product index
+
 
 FINISHED TASKS
 - Post users routines on index page (may not be able to do this w partial - needs to show routine.name of each routine) - DONE
@@ -100,7 +100,8 @@ FINISHED TASKS
 - User routine displays products acssociated with it 
 - Want user to be able to create new product thru the UI - done, but need to finish #2 as well - DONE
 - Want user to be able to add product to existing routine (can do on backend, need to do in PC) - DONE
-
+- Error page for bad url's  - DONE
+- Finish blog post - DONE
 
 User flow
 1. Sign up/login - done
@@ -174,9 +175,14 @@ User flow
    12.
    
    13. What is rack?
-   -  Rack is a ruby gem that allows us to create a simple web server. Rails is built on top of rack.
+   - Rack is a ruby gem that allows us to create a simple web server. Rails is built on top of rack.
+   - Rack's primary purposes is to serve as middleware for the Ruby server and frameworks (sinatra) to work together
+
 
    14. What is Rake used for? How do you make a Rake task?
+   - Rake is used to run tasks in Rails applications (ex. Rake Console, Rake db:migrate)
+   - Makes a backup of the database, runs tests, and centralizes tasks
+   - Can also create custom tasks in your application
 
    15. How do you use a .gitignore file correctly?
 
