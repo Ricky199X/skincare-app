@@ -39,6 +39,24 @@ class ProductController < ApplicationController
          end
       end
 
+   # # product edit action
+
+   get '/products/:id/edit' do
+      @product = Product.find_by(id: params[:id])
+      if @product
+         erb :'/products/edit'
+      else
+         redirect to 'products'
+      end
+   end
+
+   patch '/products/:id' do
+      @product = Product.find_by(id: params[:id])
+         # authenticate_user(@product)
+         @product.update(name: params[:name], category: params[:category])
+      redirect '/products'
+   end
+
       # delete product action
       delete '/products/:id' do
          authenticate

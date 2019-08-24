@@ -51,9 +51,9 @@ class ApplicationController < Sinatra::Base
 
       def authenticate_product_user(product)
          redirect '/home' if !product
-         redirect '/home' if current_user != product.user
+         redirect '/home' if current_user != product.users
       end
-      
+
       def all_products
          return self.products.all
       end

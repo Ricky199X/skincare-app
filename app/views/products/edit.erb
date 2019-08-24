@@ -1,0 +1,13 @@
+<h1>Update <%=@product.name%></h1>
+
+<form method="post" action="/products/<%= @product.id %>">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+
+   <label for="name">Enter new name here:</label>
+   <input type="text" name="name" id="name">
+
+   <label for="routine">Enter new category here:</label>
+   <input type="text" name="category" id="category">
+
+   <input type = "submit" onclick="return confirm('Please confirm to submit your changes!');" value = "Submit Changes!">
+</form>
