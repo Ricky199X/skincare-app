@@ -19,15 +19,34 @@ class ProductController < ApplicationController
    end
 
 
+   # post '/routines/:id/products' do
+   #    authenticate
+   #    if current_user
+   #       @product = Product.create(name: params[:name], category: params[:category])
+   #       current_routine.products << @product 
+   #       redirect "/routines/#{current_routine.id}"
+   #    end
+   # end
+   
+
    post '/routines/:id/products' do
       authenticate
-      if current_user
+      if logged_in?
+        if params[:name] == "" || params[:category] == ""
+          redirect to "/routines/#{current_routine.id}"
+        else
          @product = Product.create(name: params[:name], category: params[:category])
-         current_routine.products << @product 
-         redirect "/routines/#{current_routine.id}"
+            current_routine.products << @product 
+          if @routine
+            redirect "/routines/#{current_routine.id}"
+          else
+            redirect to "/routines/new"
+          end
+        end
+      else
+        redirect to '/login'
       end
-   end
-   
+    end
 
       get '/products/:id' do
          authenticate

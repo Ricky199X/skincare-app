@@ -84,6 +84,7 @@ end
 
 
 Priorities 
+- Need to protect product form being able to pass blank values
 - Have a user be able to delete a product from a routine, but keep the product in product index
 
 
@@ -102,6 +103,7 @@ FINISHED TASKS
 - Want user to be able to add product to existing routine (can do on backend, need to do in PC) - DONE
 - Error page for bad url's  - DONE
 - Finish blog post - DONE
+- Edit Product action - DONE
 
 User flow
 1. Sign up/login - done
