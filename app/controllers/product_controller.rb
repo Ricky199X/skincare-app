@@ -6,7 +6,7 @@ class ProductController < ApplicationController
       erb :'products/index'
    end
 
-   get '/products/new' do
+   get '/products' do
       authenticate
       @routine = Routine.find_by(id: params[:id])
       redirect to '/routines/:id/products'
