@@ -58,6 +58,14 @@ class ApplicationController < Sinatra::Base
          return self.products.all
       end
 
+      def sanitize_data(params)
+         clean_params = params.dup
+         params.each do |key, value|
+            clean_params[key] = Rack::Utils.escape_html(value)
+         end
+         clean_params
+      end
+
       not_found do
          status 404
          erb :'errors/error404'

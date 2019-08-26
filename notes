@@ -84,7 +84,6 @@ end
 
 
 Priorities 
-- Need to protect product form being able to pass blank values
 - Have a user be able to delete a product from a routine, but keep the product in product index
 
 
@@ -104,6 +103,8 @@ FINISHED TASKS
 - Error page for bad url's  - DONE
 - Finish blog post - DONE
 - Edit Product action - DONE
+- Need to protect product form being able to pass blank values - DONE
+
 
 User flow
 1. Sign up/login - done
@@ -112,9 +113,56 @@ User flow
    - Home is just homepage 
    - Routines is an index of all their routines
    - Products is a repo of products in the database + their descriptions (links are clickable, products can be individually added to a routine)
+   
 
 
    Knowledge Requirements:
+
+   MVC: 
+      - What is MVC? 
+      - A software design pattern consisting of three components:
+         1. Model - The data
+         2. View - Interface that displays and modifies data
+         3. COntroller - Controls the flow of your program with different operations. Provides model data to the view
+
+      We use MVC because:
+      1. it separates files + their responsibilities, which makes the overall program easier to scale and maintain.
+      2. Makes the code less buggy
+      
+      - Models can be re-used in multiple views
+
+   CRUD:
+      CRUD represents the 4 basic functions that are inplemented in relational database apps. 
+      - Create: creating a new instance of a model
+      - Read: sending back information of an instance of a model to the browser/interpreter
+      - Update: change an instance of a model's information
+      - Delete: remove an instance of a model
+
+   REST
+      REST - Representational State Transfer 
+      - A software architecture style that we use when designing URL routes on the server.
+      - Are "stateless" - meaning that the server does not need to know anything about what state the client is in.
+      - Separate concern of the client and server
+      - Websites don't HAVE to do this work. More like a set of guidelines.
+
+      RESTful routes and associated actions:
+         GET - retrieve a resource (by id) or a collection of resources
+         POST - create a new resource
+         PATCH - update an existing resource (by id)
+         DELETE - Delete a specific resource by id
+
+           
+
+
+
+   Environment Variables
+      1. What are they? 
+
+      2. Why do we use them?
+      - Variables that can change or that we want to keep secret so that it's hosted on our computer rather than being programmed inside the code itself
+      - Saved in our operating system rather than in our ruby progam 
+      
+
 
    1. How do you enable sessions? 
       ApplicationController -> enable :sessions, set :session_secret
@@ -190,6 +238,8 @@ User flow
 
    16. What methods does ActiveRecord give you? How do you access associations?
    - Be able to show Micah in Rake Console
+
+   - In terminal, punch in ActiveRecord::Base.methods for list of methods
 
 
 

@@ -15,11 +15,12 @@ class RoutineController < ApplicationController
    # protects from blank values being persisted to database
 
    post '/routines' do
+      clean_params = sanitize_data(params)
       if logged_in?
-        if params[:name] == "" || params[:description] == ""
+        if clean_params[:name] == "" || clean_params[:description] == ""
           redirect to "/routines/new"
         else
-          @routine = current_user.routines.build(name: params[:name], description: params[:description])
+          @routine = current_user.routines.build(name: clean_params[:name], description: clean_params[:description])
           if @routine.save
             redirect to "/routines/#{@routine.id}"
           else
@@ -34,8 +35,9 @@ class RoutineController < ApplicationController
    # show the routine the user clicks on in their index 
    get '/routines/:id' do
       authenticate
+      clean_params = sanitize_data(params)
       if current_user
-         @routine = Routine.find(params[:id])
+         @routine = Routine.find(clean_params[:id])
          erb :'/routines/show'
       else
          redirect to '/login'
@@ -45,7 +47,8 @@ class RoutineController < ApplicationController
    # take user to the edit routine form
 
    get '/routines/:id/edit' do
-      @routine = Routine.find_by(id: params[:id])
+      clean_params = sanitize_data(params)
+      @routine = Routine.find_by(id: clean_params[:id])
       authenticate_user(@routine)
       if @routine
          erb :'/routines/edit'
@@ -55,16 +58,19 @@ class RoutineController < ApplicationController
    end
 
    patch '/routines/:id' do
-      @routine = Routine.find_by(id: params[:id])
+      clean_params = sanitize_data(params)
+      @routine = Routine.find_by(id: clean_params[:id])
          authenticate_user(@routine)
-         @routine.update(name: params[:name], description: params[:description])
+         @routine.update(name: clean_params[:name], description: clean_params[:description])
       redirect '/routines'
    end
 
    # delete action
+   
    delete '/routines/:id' do
       authenticate
-      @routine = Routine.find_by(id: params[:id])
+      clean_params = sanitize_data(params)
+      @routine = Routine.find_by(id: clean_params[:id])
       if @routine
          @routine.destroy
          redirect '/routines'

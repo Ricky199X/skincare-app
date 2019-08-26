@@ -9,9 +9,10 @@ class UserController < ApplicationController
 
    # if i don't sign in right, I'll just be rendering my erb again 
    post '/login' do
-      user = User.find_by(username: params[:username])
+      clean_params = sanitize_data(params)
+      user = User.find_by(username: clean_params[:username])
       # wanna set session id
-      if !!user && user.authenticate(params[:password])
+      if !!user && user.authenticate(clean_params[:password])
          session[:user_id] = user.id
          redirect '/home'
       else
@@ -27,7 +28,9 @@ class UserController < ApplicationController
    end
 
    post '/users' do
-      @user = User.create(username: params[:username], email_address: params[:email_address], password: params[:password])
+      clean_params = sanitize_data(params)
+      # binding.pry
+      @user = User.create(username: clean_params[:username], email_address: clean_params[:email_address], password: clean_params[:password])
       # check if there are any errors
       if @user.errors.any?
          erb :'users/signup'
