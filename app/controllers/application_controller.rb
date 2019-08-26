@@ -29,7 +29,8 @@ class ApplicationController < Sinatra::Base
 
       def current_routine
          #should this be finding by an id, or finding by the routines name?
-         Routine.find_by(id: params[:id])
+         clean_params = sanitize_data(params)
+         Routine.find_by(id: clean_params[:id])
       end
 
       def authenticate

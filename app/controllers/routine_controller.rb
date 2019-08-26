@@ -15,22 +15,22 @@ class RoutineController < ApplicationController
    # protects from blank values being persisted to database
    post '/routines' do
       authenticate
-      clean_params = sanitize_data(params)
-      if logged_in? && current_user
-        if clean_params[:name] == "" || clean_params[:description] == ""
-          redirect to "/routines/new"
-        else
-          @routine = current_user.routines.build(name: clean_params[:name], description: clean_params[:description])
-          if @routine.save
-            redirect to "/routines"
-          else
+      if logged_in?
+        clean_params = sanitize_data(params)
+         if clean_params[:name] == "" || clean_params[:description] == ""
             redirect to "/routines/new"
-          end
+         else
+            @routine = current_user.routines.build(name: clean_params[:name], description: clean_params[:description])
+            if @routine.save
+            redirect to "/routines"
+         else
+            redirect to "/routines/new"
+         end
         end
       else
         redirect to '/login'
       end
-    end
+   end
 
    # show the routine the user clicks on in their index 
    get '/routines/:id' do

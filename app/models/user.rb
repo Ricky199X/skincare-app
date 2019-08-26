@@ -13,11 +13,11 @@ class User < ActiveRecord::Base
    validates :password, length: {in: 4..10}, unless: ->(u){ u.password.blank? }
 
 
-   def slug
-      username.downcase.gsub(" ", "-")
-   end
+   # def slug
+   #    username.downcase.gsub(" ", "-")
+   # end
   
-   def self.find_by_slug(slug)
-      self.all.find{|user| user.slug == slug}
-   end
+   # def self.find_by_slug(slug)
+   #    self.all.find{|user| user.slug == slug}
+   # end
 end

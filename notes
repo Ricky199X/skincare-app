@@ -171,10 +171,10 @@ ________________________________________________________________________________
    - Session secret is a secret key for encrypting these cookies, proctecting the server from being accessed
 
    2. How do you set up a database? 
-
-      1. rake db:create_migration NAME = create_table
-      2. in the migration file, create the table, add its data type and attribute names
-      3. run rake db:migrate
+      1. install sqlite3
+      2. rake db:create_migration NAME = create_table
+      3. in the migration file, create the table, add its data type and attribute names
+      4. run rake db:migrate
   
    
    3. How do you ensure all your gems are being used? 

@@ -10,10 +10,10 @@ class UserController < ApplicationController
    # if i don't sign in right, I'll just be rendering my erb again 
    post '/login' do
       clean_params = sanitize_data(params)
-      user = User.find_by(username: clean_params[:username])
+      @user = User.find_by(username: clean_params[:username])
       # wanna set session id
-      if !!user && user.authenticate(clean_params[:password])
-         session[:user_id] = user.id
+      if !!@user && @user.authenticate(clean_params[:password])
+         session[:user_id] = @user.id
          redirect '/home'
       else
          @failed = true
