@@ -12,12 +12,4 @@ class User < ActiveRecord::Base
    # length validation for password - must be at least 4 characters
    validates :password, length: {in: 4..10}, unless: ->(u){ u.password.blank? }
 
-
-   # def slug
-   #    username.downcase.gsub(" ", "-")
-   # end
-  
-   # def self.find_by_slug(slug)
-   #    self.all.find{|user| user.slug == slug}
-   # end
 end
