@@ -13,7 +13,6 @@ class RoutineController < ApplicationController
 
    # allows user to create a new routine via the UI, persists it to the database + adds to the user's routine index
    # protects from blank values being persisted to database
-
    post '/routines' do
       clean_params = sanitize_data(params)
       if logged_in?
@@ -45,7 +44,6 @@ class RoutineController < ApplicationController
    end
 
    # take user to the edit routine form
-
    get '/routines/:id/edit' do
       clean_params = sanitize_data(params)
       @routine = Routine.find_by(id: clean_params[:id])
@@ -66,7 +64,6 @@ class RoutineController < ApplicationController
    end
 
    # delete action
-   
    delete '/routines/:id' do
       authenticate
       clean_params = sanitize_data(params)

@@ -19,7 +19,6 @@ class UserController < ApplicationController
          @failed = true
          erb :'users/login'
       end
-
    end
 
    get '/signup' do
@@ -29,7 +28,6 @@ class UserController < ApplicationController
 
    post '/users' do
       clean_params = sanitize_data(params)
-      # binding.pry
       @user = User.create(username: clean_params[:username], email_address: clean_params[:email_address], password: clean_params[:password])
       # check if there are any errors
       if @user.errors.any?

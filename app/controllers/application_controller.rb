@@ -40,7 +40,6 @@ class ApplicationController < Sinatra::Base
             @routine = current_routine
             @user_routines = current_user.routines
             @user_products = current_user.products.all
-            # binding.pry
          end
       end
 
@@ -52,10 +51,6 @@ class ApplicationController < Sinatra::Base
       def authenticate_product_user(product)
          redirect '/home' if !product
          redirect '/home' if current_user != product.users
-      end
-
-      def all_products
-         return self.products.all
       end
 
       def sanitize_data(params)
@@ -70,6 +65,10 @@ class ApplicationController < Sinatra::Base
          status 404
          erb :'errors/error404'
       end
+
+      # def all_products
+      #    return self.products.all
+      # end
 
    end
 

@@ -104,7 +104,7 @@ FINISHED TASKS
 - Finish blog post - DONE
 - Edit Product action - DONE
 - Need to protect product form being able to pass blank values - DONE
-
+_____________________________________________________________________________________________________________________
 
 User flow
 1. Sign up/login - done
@@ -113,8 +113,7 @@ User flow
    - Home is just homepage 
    - Routines is an index of all their routines
    - Products is a repo of products in the database + their descriptions (links are clickable, products can be individually added to a routine)
-   
-
+_____________________________________________________________________________________________________________________ 
 
    Knowledge Requirements:
 
@@ -157,10 +156,11 @@ User flow
 
    Environment Variables
       1. What are they? 
+       - Variables that can change or that we want to keep secret so that it's hosted on our computer rather than being programmed inside the code itself
+       - Saved in our operating system rather than in our ruby progam 
 
       2. Why do we use them?
-      - Variables that can change or that we want to keep secret so that it's hosted on our computer rather than being programmed inside the code itself
-      - Saved in our operating system rather than in our ruby progam 
+     
       
 
 
@@ -171,7 +171,10 @@ User flow
    - Session secret is a secret key for encrypting these cookies, proctecting the server from being accessed
 
    2. How do you set up a database? 
-   - Install sqlite3
+
+      1. rake db:create_migration NAME = create_table
+      2. in the migration file, create the table, add its data type and attribute names
+      3. run rake db:migrate
   
    
    3. How do you ensure all your gems are being used? 
@@ -181,7 +184,7 @@ User flow
    - bcrypt 
 
    5. How do we encrypt our passwords in the database?
-   - with bcrypt, which a password hashing function
+   - with bcrypt, which is a password hashing function
    - If using bcrypt, when creating your migration, set the password attribute as :password_digest. 
    - bcrypt will automatically encypt what's passed thru as the password
    - To authenticate a user, the password presented by the user is hashed and compared with the stored hash
@@ -206,13 +209,13 @@ User flow
 
    8. How do you create a migration?
     - With ActiveRecord
-      1. rake db:create_migration NAME = create_table
+      1. rake db:create_migration NAME = migration_name
       2. in the migration file, create the table, add its data type and attribute names
-      3. run rake db:migrate
+      3. run rake db:migrate in terminal to migrate
 
    9. How you you set up a has_many and belongs_to relationship vs a has_many to has_many in SQL/ActiveRecord?
    - You set them up in your models. The "parent" model has_many of whatever you're trying to create a relationship with. 
-   - The "child Model" belongs to the parent :
+   - The "child Model" belongs to the parent
    ex. A User has_many Routines, a Routine belongs to a User
 
    10. How do you rescue an error in ruby?
@@ -225,7 +228,7 @@ User flow
    12.
    
    13. What is rack?
-   - Rack is a ruby gem that allows us to create a simple web server. Rails is built on top of rack.
+   - Rack is a ruby gem that allows us to create a simple web server. Sinatra is built on top of rack.
    - Rack's primary purposes is to serve as middleware for the Ruby server and frameworks (sinatra) to work together
 
 
@@ -235,10 +238,12 @@ User flow
    - Can also create custom tasks in your application
 
    15. How do you use a .gitignore file correctly?
+   The purpose of the .gitignore file is to allow you to ignore files, such as editor backup files, build products or local configuration overrides that you never want to commit into a repository. 
+   - Without matching .gitignore rules, these files will appear in the "untracked files" section of git status output.
+   - THE SESSION SECRET IS IN THE .gitignore FILE SO THAT YOU DO NOT ACCIDENTALLY PUSH YOUR SESSION SECRET TO GITHUB 
 
    16. What methods does ActiveRecord give you? How do you access associations?
    - Be able to show Micah in Rake Console
-
    - In terminal, punch in ActiveRecord::Base.methods for list of methods
 
 
