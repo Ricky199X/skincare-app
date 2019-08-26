@@ -7,8 +7,11 @@ class RoutineController < ApplicationController
    end
 
    get '/routines/new' do
-      authenticate
-      erb :'routines/new'
+      if logged_in?
+         erb :'routines/new'
+      else
+         redirect to '/login'
+      end
    end
 
    # allows user to create a new routine via the UI, persists it to the database + adds to the user's routine index
@@ -20,23 +23,23 @@ class RoutineController < ApplicationController
          if clean_params[:name] == "" || clean_params[:description] == ""
             redirect to "/routines/new"
          else
-            @routine = current_user.routines.build(name: clean_params[:name], description: clean_params[:description])
-            if @routine.save
-            redirect to "/routines"
-         else
-            redirect to "/routines/new"
+            @routine = current_user.routines.create(name: clean_params[:name], description: clean_params[:description])
+            if @routine
+               redirect to "/routines"
+            else
+               redirect to "/routines/new"
+            end
          end
-        end
       else
-        redirect to '/login'
+         redirect to '/login'
       end
    end
 
    # show the routine the user clicks on in their index 
    get '/routines/:id' do
       authenticate
-      clean_params = sanitize_data(params)
-      if current_user
+      if logged_in?
+         clean_params = sanitize_data(params)
          @routine = Routine.find(clean_params[:id])
          erb :'/routines/show'
       else
