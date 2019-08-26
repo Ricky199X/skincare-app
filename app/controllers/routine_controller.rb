@@ -24,6 +24,7 @@ class RoutineController < ApplicationController
             redirect to "/routines/new"
          else
             @routine = current_user.routines.create(name: clean_params[:name], description: clean_params[:description])
+            authenticate_user(@routine)
             if @routine
                redirect to "/routines"
             else
