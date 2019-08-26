@@ -1,4 +1,4 @@
-# StatPadder
+# Skintimacy
 
 Welcome to Skintimacy! Have you ever lost track of your skincare routine? Found it inconvenient to memorize every product you need and when? Well, look no further than Skintimacy, the app to fulfill all your skincare routine-tracking needs!
 
