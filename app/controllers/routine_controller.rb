@@ -41,13 +41,14 @@ class RoutineController < ApplicationController
       if logged_in?
          clean_params = sanitize_data(params)
          @routine = Routine.find(clean_params[:id])
+         authenticate_user(@routine)
          erb :'/routines/show'
       else
          redirect to '/login'
       end
    end
 
-   # take user to the edit routine form
+   # take user to the edit routine form -> edits only routine and description
    get '/routines/:id/edit' do
       clean_params = sanitize_data(params)
       @routine = Routine.find_by(id: clean_params[:id])
@@ -75,15 +76,15 @@ class RoutineController < ApplicationController
       erb :'products/new'
    end   
    
-   # post a new product to the current routine, but protects against blank values
+   # post a new product to the current routine & protects against blank values
    post '/routines/:id/products' do
       authenticate
       clean_params = sanitize_data(params)
       if logged_in?
          if clean_params[:name] == "" || clean_params[:category] == ""
-         redirect to "/routines/#{current_routine.id}"
+            redirect to "/routines/#{current_routine.id}"
          else
-         @product = Product.create(name: clean_params[:name], category: clean_params[:category])
+            @product = Product.create(name: clean_params[:name], category: clean_params[:category])
             current_routine.products << @product 
             redirect "/routines/#{current_routine.id}"
          end

@@ -149,6 +149,11 @@ ________________________________________________________________________________
          POST - create a new resource
          PATCH - update an existing resource (by id)
          DELETE - Delete a specific resource by id
+   
+   Sessions/Cookies 
+      - What are sessions?
+      - What are cookies?
+      - How do they work in Sinatra?
 
            
 
