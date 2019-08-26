@@ -63,6 +63,29 @@ class RoutineController < ApplicationController
       redirect '/routines'
    end
 
+   # add a product to current routine you're looking at 
+   get '/routines/:id/products/new' do
+      authenticate
+         clean_params = sanitize_data(params)
+         @routine = Routine.find_by(id: clean_params[:id])
+      erb :'products/new'
+   end   
+   
+   # post a new product to the current routine, but protects against blank values
+   post '/routines/:id/products' do
+      authenticate
+      clean_params = sanitize_data(params)
+      if logged_in?
+         if clean_params[:name] == "" || clean_params[:category] == ""
+         redirect to "/routines/#{current_routine.id}"
+         else
+         @product = Product.create(name: clean_params[:name], category: clean_params[:category])
+            current_routine.products << @product 
+            redirect "/routines/#{current_routine.id}"
+         end
+      end
+   end
+
    # delete action
    delete '/routines/:id' do
       authenticate
