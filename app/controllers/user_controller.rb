@@ -29,6 +29,7 @@ class UserController < ApplicationController
    post '/users' do
       clean_params = sanitize_data(params)
       @user = User.create(username: clean_params[:username], email_address: clean_params[:email_address], password: clean_params[:password])
+      # binding.pry
       # check if there are any errors
       if @user.errors.any?
          erb :'users/signup'

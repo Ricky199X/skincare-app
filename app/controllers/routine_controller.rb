@@ -14,6 +14,13 @@ class RoutineController < ApplicationController
       end
    end
 
+   post '/routines/search' do
+      @user = current_user
+      @user_routines = Routine.all.select {|routine| routine.products.any? {|product| product.name == ""}}
+      # @routines = Routine.find_by(params[:name])
+      erb :'routines/index'
+   end
+
    # allows user to create a new routine via the UI, persists it to the database + adds to the user's routine index
    # protects from blank values being persisted to database
    post '/routines' do
@@ -102,5 +109,6 @@ class RoutineController < ApplicationController
          redirect '/routines'
       end
    end
+
 
 end

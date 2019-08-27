@@ -151,21 +151,27 @@ ________________________________________________________________________________
          DELETE - Delete a specific resource by id
    
    Sessions/Cookies 
-      - What are sessions?
-      - What are cookies?
-      - How do they work in Sinatra?
+       Sessions/Cookies 
+      1. What are sessions?
+         - A collection of data stored on the server and associated with a given user (typically via a cookie with an id code)
 
+      2. What are cookies?
+         - A small piece of data that a server sends to the user's web browser. The browser may store it and send it back with the next request to the same server. 
+         - Typically, it's used to tell if two requests came from the same browser — keeping a user logged-in, for example.
            
+      3. We use them in our program to determine the session id and browse form page to page during a session without having to log in every page we try to visit.
+         - Anything the server needs to remember about the current session is why we use a cookie
 
 
 
    Environment Variables
       1. What are they? 
-       - Variables that can change or that we want to keep secret so that it's hosted on our computer rather than being programmed inside the code itself
+       
        - Saved in our operating system rather than in our ruby progam 
 
       2. Why do we use them?
-     
+      - To store Variables that can change or that we want to keep secret so that it's hosted on our computer rather than being programmed inside the code itself (ex. the session secret)
+      - Authentication keys, Execution mode ie. Development, staging etc, API URLs
       
 
 
@@ -238,7 +244,7 @@ ________________________________________________________________________________
 
 
    14. What is Rake used for? How do you make a Rake task?
-   - Rake is used to run tasks in Rails applications (ex. Rake Console, Rake db:migrate)
+   - Rake is used to run tasks in SInatra/Rails applications (ex. Rake Console, Rake db:migrate)
    - Makes a backup of the database, runs tests, and centralizes tasks
    - Can also create custom tasks in your application
 
@@ -255,6 +261,6 @@ ________________________________________________________________________________
 
 
 
-
+- want a search bar, type in a product name, return all of the routines with that product in it 
 
    

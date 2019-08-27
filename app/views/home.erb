@@ -1,12 +1,23 @@
 <h2>Hello there, <%= @user.username %>!</h2>
 <h3>Here's a quick view of all your routines below, feel free to <a href='/routines/new'>create one</a> too!</h3>
 
-
   <div>
       <% @user.routines.each do |routine| %>
         <li><a href= "/routines/<%= routine.id %>"><%= routine.name %></a></li>
       <% end %>
   </div>
+
+
+ <%# basically will be a form that accepts an input %>
+ <%# will accept that product name, then find_by product.name%>
+ <%# get /routine/:id %>
+
+ <br>
+
+ <form method="post" action="/routines/search">
+  <input type="text" name="shithead">
+  <input type="submit" value="search">
+ </form>
 
  <br>
  <form method ="get" action="/routines">
